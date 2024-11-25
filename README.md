@@ -30,7 +30,7 @@ This project allows users to do the following in Python:
 ### 1. `acquire_images.py`
 A script to acquire image frames from an FLI USB camera using the FLI USB SDK. Frames are saved as raw binary files.
 
-### 2. `serial_command_interface.py`
+### 2. `serialCOM.py`
 A command-line interface for sending and receiving serial commands to/from the FLI camera.
 
 ### 3. NiceGUI Camera Control
