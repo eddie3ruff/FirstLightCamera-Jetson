@@ -118,14 +118,22 @@ sudo python3 main.py
 ```
 
 #### Access the GUI
-Copy/paste the local host IP address provided in the terminal by NiceGUI into your browser. You may need to add an 's' to http. For example, https://192.168.1.202:8080/
+Copy/paste the local host IP address provided in the terminal by NiceGUI into any browser on the same network as the Jetson. You can even use your iPhone. For example, http://192.168.1.202:8080/
 
-[INSERT IMAGE OF GUI]
+MAKE SURE YOUR OPERATING SYSTEM ALLOWS DEVICE DISCOVERY ON LOCAL NETWORKS. You might need to modify your device settings if the page does not load.
 
 #### Features
 - Serial communication.
 - Saving frames to a RAW file.
 - Live preview.
+
+### Example Images of the GUI on an iPhone
+
+![Collapsed View](images/GUIscreenshot1.png "Collapsed View")
+
+![Serial Console](images/GUIscreenshot2.png "Serial Console")
+
+![Live Preview](images/GUIscreenshot3.png "Live Preview")
 
 ---
 
