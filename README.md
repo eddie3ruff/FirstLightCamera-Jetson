@@ -44,7 +44,7 @@ A web-based GUI for interacting with the camera. Built using the NiceGUI framewo
 
 ### 2. Install Python Dependencies
 
-### 3. Configure the Jetson USBFS for 1000MB instead of the default 16MB. This ensures no dropped frames at high framerates. Learn more here. [Optimizing Performance on NVIDIA Jetson - Application Note](https://cdn.alliedvision.com/fileadmin/content/documents/products/software/software/embedded/Optimizing-Performance-Jetson_app
+### 3. Configure the Jetson USBFS for 1000MB instead of the default 16MB. This ensures no dropped frames at high framerates. Learn more here. [Optimizing Performance on NVIDIA Jetson - Application Note](https://cdn.alliedvision.com/fileadmin/content/documents/products/software/software/embedded/Optimizing-Performance-Jetson_app)
 
 ---
 
