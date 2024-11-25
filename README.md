@@ -1,7 +1,7 @@
 
 # C-RED-2 LITE on Jetson Orin AGX using Python, 64 x 64 @ 9500Hz
 
-This repository contains some basic tools for interacting with and controlling First Light Imaging (FLI) cameras in Python on the Jetson Orin AGX using the simplified USB SDK for the camera. It includes command-line scripts for saving a raw file and serial communication. There is also an easy-to-use, web-based GUI where you can do serial commands, save frames to a RAW file, and a live preview. This works with a headless Jetson configuration so long as you are on the same local network.
+This repository contains some basic tools for interacting with and controlling First Light Imaging (FLI) cameras in Python on the Jetson Orin AGX using the simplified USB SDK for the camera. It includes command-line scripts for saving a raw file and serial communication. There is also an easy-to-use, web-based GUI where you can do serial commands, save frames to a RAW file, and obtain a 30Hz live preview. All of this code works with a headless Jetson configuration so long as you are on the same local network. You can SSH into the Jetson to run the code.
 
 ## Table of Contents
 
