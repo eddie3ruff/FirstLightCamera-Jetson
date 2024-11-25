@@ -78,9 +78,12 @@ sudo python3 serialCOM.py
 #### Interaction Example
 ```plaintext
 Connected to /dev/ttyACM0 at 115200 baud.
-Enter command to send (type 'exit' to quit): fps raw
-Sent: fps raw
-Received: 600.01
+Enter command to send (type 'exit' to quit): fps
+Sent: fps
+Received: Frames per second: 602.673549000
+Enter command to send (type 'exit' to quit): cropping
+Sent: cropping
+Received: Cropping off: columns: 0-639 rows:    0-511
 Enter command to send (type 'exit' to quit): exit
 Exiting program.
 Serial connection closed.
