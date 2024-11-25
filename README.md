@@ -51,7 +51,7 @@ A web-based GUI for interacting with the camera. Built using the NiceGUI framewo
 ## Usage
 
 ### 1. Image Acquisition
-Use the `acquire.py` script to capture raw image frames from the camera.
+Use the `acquire.py` script to capture raw image frames from the camera. Be sure the camera cropping configuration matches your image size.
 
 #### Run the Script
 ```bash
