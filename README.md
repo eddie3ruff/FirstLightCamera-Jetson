@@ -65,6 +65,25 @@ sudo python3 acquire.py -W 640 -H 512 -N 100 output.raw
 
 - Captures 100 frames of 640x512 resolution and saves them to `output.raw`.
 
+### Example Output
+```plaintext
+1 camera(s) detected
+Camera opened successfully, cam_ctx: 0xaaaadba6fe60
+Associated TTY: /dev/ttyACM0
+Tag checking enabled
+Informative message
+Info message code 8192 - diag Producer thread starting...
+Informative message
+Info message code 8192 - diag Consumer thread starting...
+Acquisition started...
+Informative message
+Info message code 8192 - diag Producer thread stopping...
+Informative message
+Info message code 8192 - diag Consumer thread stopping...
+Acquisition stopped successfully
+Data saved to output.raw
+```
+
 ---
 
 ### 2. Serial Command Interface
