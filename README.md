@@ -1,7 +1,7 @@
 
-# First Light Imaging Camera Control Suite for Jetson Orin using Python
+# C-RED-2 LITE on Jetson Orin AGX using Python, 64 x 64 @ 9500Hz
 
-This repository contains some basic tools for interacting with and controlling First Light Imaging (FLI) cameras in Python on the Jetson Orin AGX using the simplified USB SDK for the camera. It includes command-line scripts for saving a raw file and serial communication. There is also a web-based GUI built with NiceGUI where you can do serial commands, save to raw, and live preview. This works with a headless Jetson configuration so long as you are on the same local network.
+This repository contains some basic tools for interacting with and controlling First Light Imaging (FLI) cameras in Python on the Jetson Orin AGX using the simplified USB SDK for the camera. It includes command-line scripts for saving a raw file and serial communication. There is also an easy-to-use, web-based GUI where you can do serial commands, save frames to a RAW file, and a live preview. This works with a headless Jetson configuration so long as you are on the same local network.
 
 ## Table of Contents
 
@@ -40,27 +40,27 @@ A web-based GUI for interacting with the camera. Built using the NiceGUI framewo
 
 ## Installation
 
-### 1. Install the Simplified USB SDK
+### 1. Install the Simplified USB SDK provided by First Light onto the Jetson
 
 ### 2. Install Python Dependencies
 
-### 3. Configure the Jetson USBFS for 1000MB instead of the default 16MB. 
+### 3. Configure the Jetson USBFS for 1000MB instead of the default 16MB. This ensures no dropped frames at high framerates. Learn more here. [Optimizing Performance on NVIDIA Jetson - Application Note](https://cdn.alliedvision.com/fileadmin/content/documents/products/software/software/embedded/Optimizing-Performance-Jetson_app
 
 ---
 
 ## Usage
 
 ### 1. Image Acquisition
-Use the `acquire_images.py` script to capture raw image frames from the camera.
+Use the `acquire.py` script to capture raw image frames from the camera.
 
 #### Run the Script
 ```bash
-python acquire_images.py -W <width> -H <height> -N <frames> <output>
+sudo python3 acquire.py -W <width> -H <height> -N <frames> <output>
 ```
 
 #### Example
 ```bash
-python acquire_images.py -W 640 -H 512 -N 100 output.raw
+sudo python3 acquire.py -W 640 -H 512 -N 100 output.raw
 ```
 
 - Captures 100 frames of 640x512 resolution and saves them to `output.raw`.
@@ -68,11 +68,11 @@ python acquire_images.py -W 640 -H 512 -N 100 output.raw
 ---
 
 ### 2. Serial Command Interface
-The `serial_command_interface.py` script enables communication with the camera via serial commands.
+The `serialCOM.py` script enables communication with the camera via serial commands.
 
 #### Run the Script
 ```bash
-python serial_command_interface.py
+sudo python3 serialCOM.py
 ```
 
 #### Interaction Example
@@ -92,17 +92,18 @@ Serial connection closed.
 
 #### Start the Server
 ```bash
-python main.py
+sudo python3 main.py
 ```
 
 #### Access the GUI
-Copy/paste the local host IP address into your browser. You may need to add an 's' to http. 
+Copy/paste the local host IP address provided in the terminal by NiceGUI into your browser. You may need to add an 's' to http. For example, https://192.168.1.202:8080/
 
+[INSERT IMAGE OF GUI]
 
 #### Features
-- Serial Communication.
-- Saving a number of frames to a RAW file.
-- Live Preview.
+- Serial communication.
+- Saving frames to a RAW file.
+- Live preview.
 
 ---
 
