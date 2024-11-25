@@ -129,11 +129,11 @@ MAKE SURE YOUR OPERATING SYSTEM ALLOWS DEVICE DISCOVERY ON LOCAL NETWORKS. You m
 
 ### Example Images of the GUI on an iPhone
 
-![Collapsed View](images/GUIscreenshot1.png "Collapsed View")
+![Collapsed View](images/GUIscreenshot1.PNG "Collapsed View")
 
-![Serial Console](images/GUIscreenshot2.png "Serial Console")
+![Serial Console](images/GUIscreenshot2.PNG "Serial Console")
 
-![Live Preview](images/GUIscreenshot3.png "Live Preview")
+![Live Preview](images/GUIscreenshot3.PNG "Live Preview")
 
 ---
 
