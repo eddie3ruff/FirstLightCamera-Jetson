@@ -52,18 +52,7 @@ sudo sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb'
 
 Add `usbcore.usbfs_memory_mb=1000` to the kernel command line to make it stick.
 
-Pin the Jetson's clocks - the memory clock in particular limits sustained USB
-throughput:
-
-```bash
-sudo jetson_clocks
-```
-
-That applies immediately. `sudo nvpmodel -m 0` needs a reboot; note that
-chaining them with `&&` means a failure in `nvpmodel` skips `jetson_clocks`
-entirely.
-
-Check what the camera actually negotiated, and what it shares the bus with:
+Check what the camera negotiated, and what it shares the bus with:
 
 ```bash
 lsusb -t
@@ -316,9 +305,9 @@ number that matters.
 
 **Dropped frames only on large windows** - compare the bandwidth, not the
 frame rate. `width x height x 2 x fps` against roughly 425 MB/s for a USB 3.0
-link. Full frame at full rate is close enough to the ceiling that a hub, a
-throttled memory clock or a second device on the same bus will push it over.
-Recording full frame at a lower rate is the reliable fix.
+link. Full frame at full rate is close enough to the ceiling that a hub or a
+second device on the same bus will push it over. Recording full frame at a
+lower rate is the reliable fix.
 
 If a recording is clean the first few times and then degrades - rising error
 counts, `Unable to submit`, eventually a crash - the SDK is not recovering
