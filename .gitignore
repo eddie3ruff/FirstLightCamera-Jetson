@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+# Recordings and snapshots
+captures/
+*.raw
+snapshot_*.png

@@ -7,7 +7,7 @@ picker, and recording to `.raw`.
 The Jetson is usually headless, so the app serves a page on the network and you
 drive it from a laptop or a phone.
 
-<!-- Add screenshots to images/ and reference them here. -->
+![The app streaming a 512x512 window at 703 fps](GUI.png)
 
 ---
 
@@ -316,3 +316,13 @@ after `fli_usb_stopAcquisition` before anything starts again; raise it if the
 pattern persists. `sudo python3 acquire.py -N 1000 out.raw` runs one capture in
 a process with no web app in it, which tells you whether the app is involved at
 all.
+
+---
+
+## License
+
+MIT - see [LICENSE](LICENSE).
+
+The First Light USB SDK is not included and is not covered by that licence.
+The app loads whatever is installed on the machine; obtain the SDK from First
+Light Imaging under their terms.
