@@ -16,6 +16,7 @@ headless: open the URL it prints from any machine on the same network.
 from __future__ import annotations
 
 import argparse
+import socket
 
 from nicegui import app, ui
 
@@ -57,6 +58,31 @@ app.on_shutdown(SESSION.shutdown)
 if not ARGS.no_auto:
     # Bring the camera up once, as the process starts - not per browser client.
     app.on_startup(SESSION.autostart)
+
+
+def lan_address() -> str:
+    """The address other machines reach this Jetson on.
+
+    Picks the interface the default route uses, which skips loopback and any
+    docker bridge. No traffic is sent - connecting a UDP socket only sets the
+    local endpoint.
+    """
+    probe = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        probe.connect(('8.8.8.8', 80))
+        return probe.getsockname()[0]
+    except OSError:
+        return ARGS.host
+    finally:
+        probe.close()
+
+
+def announce() -> None:
+    host = ARGS.host if ARGS.host != '0.0.0.0' else lan_address()
+    print(f'C-RED camera control on http://{host}:{ARGS.port}', flush=True)
+
+
+app.on_startup(announce)
 
 
 @ui.page('/')
@@ -106,6 +132,7 @@ def main() -> None:
             show=ARGS.show,       # headless Jetson: do not try to launch a browser
             reload=ARGS.reload,
             uvicorn_logging_level='warning',
+            show_welcome_message=False,   # we print just the LAN address
             # Every preview frame is an outgoing message carrying a base64
             # PNG.  NiceGUI keeps the last 1000 per client so a reconnecting
             # browser can catch up, which at a few hundred KB a frame is
