@@ -1,11 +1,11 @@
 # C-RED Camera Control
 
-A small web app for driving a First Light Imaging C-RED camera from a Jetson
+A small web app for using a First Light Imaging C-RED camera from a Jetson
 over the simplified USB SDK: live preview, a serial console, a visual crop
 picker, and recording to `.raw`.
 
-The Jetson is usually headless, so the app serves a page on the network and you
-drive it from a laptop or a phone.
+The Jetson is usually headless, so the app serves a page on the local network and you
+access the GUI from a laptop or a phone.
 
 ![The app streaming a 512x512 window at 703 fps](GUI.png)
 
