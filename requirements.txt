@@ -1,0 +1,9 @@
+# Jetson (JetPack 6 / Ubuntu 22.04 / Python 3.10) - NiceGUI 3.x needs Python >= 3.10.
+nicegui>=3.16,<4
+numpy>=1.24
+pyserial>=3.5
+
+# Optional but recommended: with Pillow the live preview is JPEG (~50 KB/frame
+# at 640x512); without it the app falls back to a built-in PNG encoder
+# (~320 KB/frame) and still works. JetPack usually has it already.
+pillow>=9.0
